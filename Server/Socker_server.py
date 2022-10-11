@@ -93,12 +93,10 @@ while True:
             plt.show()
             message(count_list)
             count_list = []
-            if count == 3:
-                server_socket.close()
-                break
+
 
     else:  # When information other than count information (information on what situation it is) is received, a warning window is displayed
 
-        display.Display(data.decode())
+        Display.allinone(data.decode())
         print(data.decode())
 

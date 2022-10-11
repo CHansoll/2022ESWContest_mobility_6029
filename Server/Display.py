@@ -11,7 +11,6 @@ def switch(str):
         'uphill': 'Incorrect driving on an uphill road is adversely affecting the battery.\n\n Please drive carefully.',
         'downhill': 'Incorrect driving on an downhill road is adversely affecting the battery.\n\n Please drive carefully.',
         'bump': 'Incorrect driving on a speed bump has a bad effect on the battery.\n\n Please drive carefully.',
-        'acc': 'Rapid acceleration is adversely affecting the battery.\n\n Please drive carefully.',
         'winter': 'The low ambient temperature is adversely affecting the battery.\n\n Please drive carefully.',
         'overcharge': 'Overcharge is adversely affecting the battery.\n\n Please be careful.',
         'overdischarge': 'Overdischarge is adversely affecting the battery.\n\n Please be careful.',

@@ -48,17 +48,17 @@ if __name__ == "__main__":
         if (4 <= amplitude and 200 < frequency < 350):  # uphill
             count_uphill += 1
             if count_uphill == 30:
-                client.cmd(1)
+                client.cmd(0)
 
         elif (4 <= amplitude and 50 < frequency < 200):  # downhill
             count_downhill += 1
             if count_downhill == 30:
-                client.cmd(2)
+                client.cmd(1)
 
         elif (6 <= amplitude and 0 < frequency < 50) or (6 < amplitude and 350 < frequency < 450):  # bump
             count_bump += 1
             if count_bump == 30:
-                client.cmd(3)
+                client.cmd(2)
 
         else:
             continue
@@ -68,23 +68,23 @@ if __name__ == "__main__":
                     6 < amplitude and 450 <= frequency):  # winter
                 count_winter += 1
                 if count_winter == 30:
-                    client.cmd(4)
+                    client.cmd(3)
 
         elif temperature >= 60:
             if (6 <= amplitude and 0 < frequency < 50) or (6 < amplitude and 350 < frequency < 450):  # overcharge
                 count_overcharge += 1
                 if count_overcharge == 30:
-                    client.cmd(5)
+                    client.cmd(4)
 
             elif 4 <= amplitude and 50 < frequency < 200:  # overdischarge
                 count_overdischarge += 1
                 if count_overdischarge == 30:
-                    client.cmd(6)
+                    client.cmd(5)
 
             elif 4 <= amplitude and 200 < frequency < 350:  # overcurrent
                 count_overcurrent += 1
                 if count_overcurrent == 30:
-                    client.cmd(7)
+                    client.cmd(6)
             else:
                 continue
 
@@ -101,8 +101,6 @@ if __name__ == "__main__":
         storage[7] = count_overcurrent
 
         if total == 100:  # level1 warning
-            client.senddata(count_uphill, count_downhill, count_bump, count_winter, count_overcharge,
-                            count_overdischarge, count_overcurrent)
             send()
 
         elif total == 150:  # level2 warning
