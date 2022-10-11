@@ -37,17 +37,13 @@ def send():  # cumulative count values in array storage
 
 # Analyze driving habits and situations with frequency, amplitude, and temperature values
 if __name__ == "__main__":
-    # Instead of skip-networking the default is now to listen only on
-    # localhost which is more compatible and is not less secure.
-    # bind-address            = 127.0.0.1
+
 
     while True:
         frequency = FFT.fft()[1]
         amplitude = FFT.fft()[0]
         temperature = Read_temperature.read_temp()
-        # Instead of skip-networking the default is now to listen only on
-        # localhost which is more compatible and is not less secure.
-        # bind-address            = 127.0.0.1
+
 
         if (4 <= amplitude and 200 < frequency < 350):  # uphill
             count_uphill += 1
