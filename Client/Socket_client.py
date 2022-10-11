@@ -20,7 +20,7 @@ def switch(i):
         2: 'bump',
         3: 'winter',
         4: 'overcharge',
-        5: 'disovercharge',
+        5: 'overdischarge',
         6: 'overcurrent'
     }
     return switcher.get(str, 'ooo')
